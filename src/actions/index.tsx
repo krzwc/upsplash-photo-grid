@@ -2,6 +2,7 @@ import { Action, ActionCreator } from "redux";
 import { ThunkAction } from "redux-thunk";
 
 import { APP_ID } from "../utils/credentials";
+import { apiUrl } from "../utils/apiUrl";
 
 import { AppState } from "../types/AppState";
 
@@ -29,7 +30,7 @@ export const fetchImgs: ActionCreator<
   ThunkAction<Promise<any>, AppState, undefined, Action>
 > = (keyword: string) => async dispatch => {
   dispatch(requestImgs(keyword));
-  const url = `https://api.unsplash.com/search/photos/?page=1&per_page=10&query=${keyword}&client_id=${APP_ID}`;
+  const url = apiUrl(keyword, APP_ID);
   // const response = await fetch(url);
   // const json = await response.json();
   // dispatch(receiveImgs(keyword, json));
