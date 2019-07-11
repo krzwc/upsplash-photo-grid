@@ -1,9 +1,9 @@
-import * as reducers from "../reducers";
-import rootReducer from "../reducers";
-import * as actions from "../actions";
+import * as reducers from "..";
+import rootReducer from "..";
+import * as actions from "../../actions";
 import { AnyAction } from "redux";
-import { defaultKeyword } from "../utils/defaultKeyword";
-import { initialState } from "../utils/initialState";
+import { defaultKeyword } from "../../utils/defaultKeyword";
+import { initialState } from "../../utils/initialState";
 
 describe("currentKeyword reducer", () => {
   test("should return the initial state", () => {

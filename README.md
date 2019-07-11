@@ -1,4 +1,5 @@
-# UNSPLASH.COM PHOTO GRID APP
+# Unsplash.com Photo Grid App
+
 Full-featured demo available at [http://bit.ly/PhotoGridApp](http://bit.ly/PhotoGridApp)
 
 ## Available Scripts

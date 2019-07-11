@@ -1,8 +1,8 @@
-import * as actions from "../actions";
+import * as actions from "..";
 import configureMockStore from "redux-mock-store";
 import thunk from "redux-thunk";
 import fetchMock from "fetch-mock";
-import { initialState } from "../utils/initialState";
+import { initialState } from "../../utils/initialState";
 
 test("setKeyword should create an action to create a new keyword", () => {
   const kw = "plants";

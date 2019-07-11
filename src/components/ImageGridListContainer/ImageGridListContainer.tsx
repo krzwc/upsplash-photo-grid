@@ -1,7 +1,7 @@
 import React from "react";
-import { Imgs } from "../types/Imgs";
-import { TileData } from "../types/TileData";
-import ImageGridList from "./ImageGridList";
+import { Imgs } from "../../types/Imgs";
+import { TileData } from "../../types/TileData";
+import ImageGridList from "../ImageGridList";
 
 export const rowRandomizer = () => {
   const range = 3;

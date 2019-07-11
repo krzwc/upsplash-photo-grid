@@ -2,7 +2,7 @@ import React from "react";
 import { Theme, createStyles, makeStyles } from "@material-ui/core/styles";
 import GridList from "@material-ui/core/GridList";
 import GridListTile from "@material-ui/core/GridListTile";
-import { TileData } from "../types/TileData";
+import { TileData } from "../../types/TileData";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({

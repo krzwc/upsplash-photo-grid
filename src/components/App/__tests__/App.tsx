@@ -1,9 +1,10 @@
 import React from "react";
-import App from "../App";
+import ReactDOM from "react-dom";
+import App from "..";
 import { App as NotConnectedApp } from "../App";
 import * as enzyme from "enzyme";
 import { Dispatch, AnyAction } from "redux";
-import { store } from "../Store";
+import { store } from "../../../Store";
 import { Provider } from "react-redux";
 
 //todo -> testing of the App component without store connection
@@ -44,4 +45,15 @@ describe("App", () => {
     );
     expect(app.find("ul").exists()).toBe(true);
   });
+});
+
+it("renders without crashing", () => {
+  const div = document.createElement("div");
+  ReactDOM.render(
+    <Provider store={store}>
+      <App />
+    </Provider>,
+    div
+  );
+  ReactDOM.unmountComponentAtNode(div);
 });

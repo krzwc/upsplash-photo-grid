@@ -3,7 +3,7 @@ import ImageGridListContainer, {
   rowRandomizer,
   masonryLayoutGenerator,
   tileDataCreator
-} from "../components/ImageGridListContainer";
+} from "..";
 import * as enzyme from "enzyme";
 
 test("rowRandomizer randomizes columns properly", () => {

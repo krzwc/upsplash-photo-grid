@@ -1,5 +1,4 @@
 import { Imgs } from "./Imgs";
-import { defaultKeyword } from "../utils/defaultKeyword";
 import { Dispatch } from "redux";
 
 export type AppStateKeywordPart = {

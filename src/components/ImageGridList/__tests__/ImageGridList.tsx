@@ -1,5 +1,5 @@
 import React from "react";
-import ImageGridList from "../components/ImageGridList";
+import ImageGridList from "..";
 import * as enzyme from "enzyme";
 
 const tileData = [

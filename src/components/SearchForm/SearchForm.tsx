@@ -1,5 +1,5 @@
 import React from "react";
-import MUITextField from "./MUITextField";
+import MUITextField from "../MUITextField";
 
 type KeywordProps = {
   onSearch: (keyword: string) => void;

@@ -1,5 +1,5 @@
 import React from "react";
-import MUITextField from "../components/MUITextField";
+import MUITextField from "..";
 import * as enzyme from "enzyme";
 
 const onChange = () => {};
