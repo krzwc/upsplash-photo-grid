@@ -4,7 +4,7 @@ import { ThunkAction } from "redux-thunk";
 import { APP_ID } from "../utils/credentials";
 import { apiUrl } from "../utils/apiUrl";
 
-import { AppState } from "../types/AppState";
+import { AppState } from "../components/App/types";
 
 export const REQUEST_IMGS = "REQUEST_IMGS";
 export const RECEIVE_IMGS = "RECEIVE_IMGS";

@@ -2,7 +2,8 @@ import React from "react";
 import { Theme, createStyles, makeStyles } from "@material-ui/core/styles";
 import GridList from "@material-ui/core/GridList";
 import GridListTile from "@material-ui/core/GridListTile";
-import { TileData } from "../../types/TileData";
+// import { TileData } from "../../types/TileData";
+import { Props } from "./types";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -19,11 +20,7 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-type Props = {
-  tileData: TileData;
-};
-
-const ImageGridList = ({ tileData }: Props) => {
+export default ({ tileData }: Props) => {
   const classes = useStyles();
 
   return (
@@ -38,5 +35,3 @@ const ImageGridList = ({ tileData }: Props) => {
     </div>
   );
 };
-
-export default ImageGridList;

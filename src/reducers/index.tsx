@@ -1,7 +1,7 @@
 import { combineReducers, Reducer } from "redux";
 import { defaultKeyword } from "../utils/defaultKeyword";
 import { SET_KEYWORD, REQUEST_IMGS, RECEIVE_IMGS } from "../actions";
-import { AppStateKeywordPart, AppStateImgsPart } from "../types/AppState";
+import { AppStateKeywordPart, AppStateImgsPart } from "../components/App/types";
 
 export const currentKeyword: Reducer<AppStateKeywordPart> = (
   state = { keyword: defaultKeyword },

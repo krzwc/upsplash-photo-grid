@@ -1,6 +1,6 @@
 import React from "react";
-import { Imgs } from "../../types/Imgs";
-import { TileData } from "../../types/TileData";
+import { Imgs } from "./types";
+import { TileData } from "../ImageGridList/types/";
 import ImageGridList from "../ImageGridList";
 
 export const rowRandomizer = () => {

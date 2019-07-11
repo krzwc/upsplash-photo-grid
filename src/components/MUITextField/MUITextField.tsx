@@ -1,9 +1,6 @@
 import React from "react";
 import TextField from "@material-ui/core/TextField";
-
-type onChangeProps = {
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-};
+import { onChangeProps } from "./types";
 
 export default ({ onChange }: onChangeProps) => {
   return (

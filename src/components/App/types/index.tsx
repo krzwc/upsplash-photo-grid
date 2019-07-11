@@ -1,4 +1,4 @@
-import { Imgs } from "./Imgs";
+import { Imgs } from "../../ImageGridListContainer/types";
 import { Dispatch } from "redux";
 
 export type AppStateKeywordPart = {

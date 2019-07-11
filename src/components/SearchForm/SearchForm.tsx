@@ -1,13 +1,6 @@
 import React from "react";
 import MUITextField from "../MUITextField";
-
-type KeywordProps = {
-  onSearch: (keyword: string) => void;
-};
-
-type KeywordState = {
-  keyword: string;
-};
+import { KeywordProps, KeywordState } from "./types";
 
 export default class SearchForm extends React.Component<
   KeywordProps,

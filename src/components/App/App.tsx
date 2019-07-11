@@ -3,7 +3,7 @@ import SearchForm from "../SearchForm";
 import ImageGridListContainer from "../ImageGridListContainer";
 import { fetchImgsIfNeeded, setKeyword } from "../../actions";
 import { connect } from "react-redux";
-import { AppState, AppProps } from "../../types/AppState";
+import { AppState, AppProps } from "./types";
 
 export class App extends React.Component<AppProps, {}> {
   componentDidMount() {
