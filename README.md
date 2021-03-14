@@ -1,23 +1,15 @@
-# Unsplash.com Photo Grid App
+## Setting up Jenkins
 
-Full-featured demo available at [http://bit.ly/PhotoGridApp](http://bit.ly/PhotoGridApp)
+```bash
+docker run -p 8080:8080 -p 50000:50000 -d -v jenkins_home:/var/jenkins_home jenkins/jenkins:lts
+```
 
-## Available Scripts
+and
 
-In the project directory, you can run:
+```bash
+docker logs <container id>
+```
 
-### `npm run start`
+and copy the administrator password
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-### `npm run test`
-
-Launches the test runner in the interactive watch mode.<br>
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
+go to `localhost:8080` and use the password
