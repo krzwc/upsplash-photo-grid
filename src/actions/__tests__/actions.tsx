@@ -8,7 +8,7 @@ test("setKeyword should create an action to create a new keyword", () => {
   const kw = "plants";
   const expectedAction = {
     type: actions.SET_KEYWORD,
-    keyword: kw
+    keyword: kw,
   };
   expect(actions.setKeyword(kw)).toEqual(expectedAction);
 });
@@ -17,7 +17,7 @@ test("requestImgs should create an action to request images", () => {
   const kw = "plants";
   const expectedAction = {
     type: actions.REQUEST_IMGS,
-    keyword: kw
+    keyword: kw,
   };
   expect(actions.requestImgs(kw)).toEqual(expectedAction);
 });
@@ -29,7 +29,7 @@ test("receiveImgs should create an action to receive images", () => {
   const expectedAction = {
     type: actions.RECEIVE_IMGS,
     keyword: kw,
-    payload: []
+    payload: [],
   };
   expect(actions.receiveImgs(kw, json)).toEqual(expectedAction);
 });
@@ -52,7 +52,7 @@ describe("async actions", () => {
       "https://api.unsplash.com/search/photos/?page=1&per_page=10&query=plants&client_id=dcbe7b61e55f00a8ffe49e9131cf5454cea68fa52077599cf250e44a718267a1",
       {
         body: { results: [{ id: "string", urls: { small: "url" } }] },
-        headers: { "content-type": "application/json" }
+        headers: { "content-type": "application/json" },
       }
     );
 
@@ -63,12 +63,12 @@ describe("async actions", () => {
       {
         type: actions.RECEIVE_IMGS,
         keyword: kw,
-        payload: [{ id: "string", urls: { small: "url" } }]
-      }
+        payload: [{ id: "string", urls: { small: "url" } }],
+      },
     ];
     const store = mockStore({
       currentKeyword: { keyword: "" },
-      imgs: { isFetching: false, payload: [] }
+      imgs: { isFetching: false, payload: [] },
     });
 
     return store.dispatch<any>(actions.fetchImgs(kw)).then(() => {
@@ -82,7 +82,7 @@ describe("async actions", () => {
       "https://api.unsplash.com/search/photos/?page=1&per_page=10&query=plants&client_id=dcbe7b61e55f00a8ffe49e9131cf5454cea68fa52077599cf250e44a718267a1",
       {
         body: { results: [{ id: "string", urls: { small: "url" } }] },
-        headers: { "content-type": "application/json" }
+        headers: { "content-type": "application/json" },
       }
     );
 
@@ -93,12 +93,12 @@ describe("async actions", () => {
       {
         type: actions.RECEIVE_IMGS,
         keyword: kw,
-        payload: [{ id: "string", urls: { small: "url" } }]
-      }
+        payload: [{ id: "string", urls: { small: "url" } }],
+      },
     ];
     const store = mockStore({
       currentKeyword: { keyword: "" },
-      imgs: { isFetching: false, payload: [] }
+      imgs: { isFetching: false, payload: [] },
     });
 
     return store.dispatch<any>(actions.fetchImgsIfNeeded(kw)).then(() => {
@@ -112,7 +112,7 @@ describe("async actions", () => {
       "https://api.unsplash.com/search/photos/?page=1&per_page=10&query=plants&client_id=dcbe7b61e55f00a8ffe49e9131cf5454cea68fa52077599cf250e44a718267a1",
       {
         body: { results: [{ id: "string", urls: { small: "url" } }] },
-        headers: { "content-type": "application/json" }
+        headers: { "content-type": "application/json" },
       }
     );
 
@@ -123,12 +123,12 @@ describe("async actions", () => {
       {
         type: actions.RECEIVE_IMGS,
         keyword: "",
-        payload: []
-      }
+        payload: [],
+      },
     ];
     const store = mockStore({
       currentKeyword: { keyword: "" },
-      imgs: { isFetching: true, payload: [] }
+      imgs: { isFetching: true, payload: [] },
     });
 
     return expect(store.dispatch<any>(actions.fetchImgsIfNeeded(kw))).toBe(
