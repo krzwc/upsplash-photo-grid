@@ -4,12 +4,17 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building..'
+                echo 'Installing...'
+                nodejs('node-14') {
+                    sh 'cd app && npm install'
+                }
             }
         }
         stage('Test') {
             steps {
-                echo 'Testing..'
+                nodejs('node-14') {
+                    sh 'cd app && npm test a -- --watchAll=false'
+                }
             }
         }
     }
