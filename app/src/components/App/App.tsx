@@ -27,12 +27,12 @@ export class App extends React.Component<AppProps, {}> {
   render() {
     const { payload } = this.props;
     return (
-      <div>
-        <div style={{ margin: "auto auto", padding: "10px", width: "750px" }}>
+      <>
+        <div className="text-center m-auto p-2 fixed top-0 bg-white shadow-md z-10 w-full">
           <SearchForm onSearch={this.fetchPhotos} />
         </div>
         {payload && <ImageGridListContainer payload={payload} />}
-      </div>
+      </>
     );
   }
 }
@@ -45,7 +45,7 @@ const mapStateToProps = (state: AppState) => {
   return {
     keyword,
     payload,
-    isFetching
+    isFetching,
   };
 };
 

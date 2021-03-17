@@ -1,21 +1,23 @@
-import React from "react";
+import { FunctionComponent } from "react";
 import TextField from "@material-ui/core/TextField";
 import { onChangeProps } from "./types";
 
-export default ({ onChange }: onChangeProps) => {
+const MUITextField: FunctionComponent<onChangeProps> = ({ onChange }) => {
   return (
     <TextField
       id="outlined-full-width"
       label="Search images of:"
-      style={{ margin: 1 }}
+      className="max-w-screen-md"
       placeholder="Search..."
       fullWidth
       margin="normal"
       variant="outlined"
       InputLabelProps={{
-        shrink: true
+        shrink: true,
       }}
       onChange={onChange}
     />
   );
 };
+
+export default MUITextField;
