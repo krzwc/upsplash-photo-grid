@@ -24,3 +24,5 @@ yarn-error.log*
 node_modules
 .DS_Store
 .idea/*
+
+common_styles/index.css
