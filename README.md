@@ -1,3 +1,8 @@
+## Tricky parts solved
+
+- image CDN <br>
+  Instead of downloading imgs directly from `unsplash.com` an image CDN is used ![cdn](./assets/cdn.png) to serve `*.webp` files ![webp](./assets/webp.png) whenever possible and the image in the optimised resolution is downloaded (based on the containers width and legth). Additionally retina displays are taken into consideration.
+
 ## Setting up Jenkins
 
 ```bash
