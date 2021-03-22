@@ -11,7 +11,7 @@ export const tileDataCreator = (payload: Imgs) =>
 
 const ImageGridList: FunctionComponent<{ tileData: Imgs }> = ({ tileData }) => {
   return (
-    <div className="ImageGrid">
+    <div className="ImageGrid w-screen my-0 mx-auto flex flex-wrap items-center p-1 pt-28">
       {tileDataCreator(tileData).map((tile) => (
         <ImageGridElement img={tile.img} key={tile.title} />
       ))}
