@@ -1,7 +1,3 @@
-export type Props = {
-  tileData: Imgs;
-};
-
 export type TileData = Array<{ img: string; title: string }>;
 
 export type Imgs = Img[];
