@@ -25,4 +25,4 @@ node_modules
 .DS_Store
 .idea/*
 
-common_styles/index.css
+app/src/common_styles/index.css

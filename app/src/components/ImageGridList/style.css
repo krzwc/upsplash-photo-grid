@@ -1,0 +1,63 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: black;
+}
+
+.ImageGrid {
+  width: 100vw;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 5px;
+  padding-top: 96px;
+}
+
+.ImageGrid > div {
+  background: #444;
+  height: 150px;
+  flex: 1 0 150px;
+  margin: 5px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+@media (min-width: 490px) and (max-width: 649px) {
+  .ImageGrid > div:nth-child(7n + 5),
+  .ImageGrid > div:nth-child(7n + 6) {
+    flex: 2 0 310px;
+  }
+}
+
+@media (min-width: 650px) and (max-width: 809px) {
+  .ImageGrid > div:nth-child(11n + 1),
+  .ImageGrid > div:nth-child(11n + 8),
+  .ImageGrid > div:nth-child(11n + 10) {
+    flex: 2 0 310px;
+  }
+  .ImageGrid > div:nth-child(11n + 4) {
+    flex: 3 0 470px;
+  }
+}
+
+@media (min-width: 810px) {
+  .ImageGrid {
+    max-width: 1200px;
+  }
+  .ImageGrid > div:nth-child(16n + 2),
+  .ImageGrid > div:nth-child(16n + 4),
+  .ImageGrid > div:nth-child(16n + 11) {
+    flex: 3 0 470px;
+  }
+  .ImageGrid > div:nth-child(16n + 5),
+  .ImageGrid > div:nth-child(16n + 8),
+  .ImageGrid > div:nth-child(16n + 13) {
+    flex: 2 0 310px;
+  }
+}

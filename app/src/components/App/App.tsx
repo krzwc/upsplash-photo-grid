@@ -1,6 +1,6 @@
 import React from "react";
 import SearchForm from "../SearchForm";
-import ImageGridListContainer from "../ImageGridListContainer";
+import ImageGridList from "../ImageGridList";
 import { fetchImgsIfNeeded, setKeyword } from "../../actions";
 import { connect } from "react-redux";
 import { AppState, AppProps } from "./types";
@@ -31,7 +31,7 @@ export class App extends React.Component<AppProps, {}> {
         <div className="text-center m-auto p-2 fixed top-0 bg-white shadow-md z-10 w-full">
           <SearchForm onSearch={this.fetchPhotos} />
         </div>
-        {payload && <ImageGridListContainer payload={payload} />}
+        {payload && <ImageGridList tileData={payload} />}
       </>
     );
   }

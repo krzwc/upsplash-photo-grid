@@ -1,39 +1,48 @@
-import { FunctionComponent } from "react";
-import { Theme, createStyles, makeStyles } from "@material-ui/core/styles";
-import GridList from "@material-ui/core/GridList";
-import GridListTile from "@material-ui/core/GridListTile";
-// import { TileData } from "../../types/TileData";
-import { Props } from "./types";
+import { FunctionComponent, useEffect } from "react";
+import { Props, Imgs, TileData } from "./types";
+import "./style.css";
 
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    root: {
-      display: "flex",
-      flexWrap: "wrap",
-      justifyContent: "space-around",
-      overflow: "hidden",
-      backgroundColor: theme.palette.background.paper,
-    },
-    gridList: {
-      width: 750,
-    },
-  })
-);
+export const tileDataCreator = (payload: Imgs) => {
+  const tileData: TileData = [];
+  payload.forEach((img) => {
+    const url = img.urls.small;
+    tileData.push(
+      Object.assign(
+        {},
+        {
+          img: url.slice(0, url.lastIndexOf("?")),
+          title: img.id,
+        }
+      )
+    );
+  });
+
+  return tileData;
+};
 
 const ImageGridList: FunctionComponent<Props> = ({ tileData }) => {
-  const classes = useStyles();
+  useEffect(() => {
+    const baseUrl = "http://res.cloudinary.com/deoe6zzdw/image/fetch";
 
+    Array.from(document.querySelectorAll("[data-bg]")).forEach((image) => {
+      const { clientWidth, clientHeight } = image;
+      const pixelRatio = window.devicePixelRatio || 1.0;
+      const imageParams = `w_${
+        100 * Math.round((clientWidth * pixelRatio) / 100)
+      },h_${
+        100 * Math.round((clientHeight * pixelRatio) / 100)
+      },c_fill,g_auto,f_auto`;
+      const url = `${baseUrl}/${imageParams}/${
+        (image as HTMLElement).dataset.bg
+      }`;
+      (image as HTMLElement).style.backgroundImage = `url('${url}')`;
+    });
+  });
   return (
-    <div className="pt-20">
-      <div className={classes.root}>
-        <GridList cellHeight={250} className={classes.gridList} cols={3}>
-          {tileData.map((tile) => (
-            <GridListTile key={tile.img} cols={tile.cols || 1}>
-              <img src={tile.img} alt={tile.title} />
-            </GridListTile>
-          ))}
-        </GridList>
-      </div>
+    <div className="ImageGrid">
+      {tileDataCreator(tileData).map((tile) => (
+        <div data-bg={tile.img} key={tile.title} />
+      ))}
     </div>
   );
 };
