@@ -19,7 +19,7 @@ const ImageGridElement: FunctionComponent<{ img: string }> = ({ img }) => {
   });
   return (
     <div
-      className="bg-gray-800 h-40 w-40 flex-grow flex-shrink-0 m-1 bg-cover bg-no-repeat bg-center"
+      className="bg-gray-800 h-150px w-150px flex-grow flex-shrink-0 m-1 bg-cover bg-no-repeat bg-center"
       ref={imgRef}
     />
   );
