@@ -18,3 +18,5 @@ docker logs <container id>
 and copy the administrator password
 
 go to `localhost:8080` and use the password
+
+Create a new user e.g. `jenkins-user`

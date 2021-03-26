@@ -14,7 +14,7 @@ describe("ImageGridList", () => {
     expect(imageGridList.find("ul").exists()).toBe(true);
   });
 
-  test.only("renders img src properly", () => {
+  test("renders img src properly", () => {
     const imageGridList = enzyme.mount(<ImageGridList tileData={tileData} />);
     // console.log(imageGridList.find(".ImageGrid").debug());
     expect(imageGridList.find(ImageGridElement).length).toBe(2);

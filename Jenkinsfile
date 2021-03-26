@@ -17,5 +17,12 @@ pipeline {
                 }
             }
         }
+        stage('Lint') {
+            steps {
+                nodejs('node-14') {
+                    sh 'cd app && npm lint'
+                }
+            }
+        }
     }
 }
