@@ -43,7 +43,7 @@ describe("App", () => {
         <App />
       </Provider>
     );
-    expect(app.find("ul").exists()).toBe(true);
+    expect(app.find(".ImageGrid").exists()).toBe(true);
   });
 });
 

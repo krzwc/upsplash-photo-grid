@@ -1,10 +1,11 @@
 import React from "react";
 import ImageGridList from "..";
+import ImageGridElement from "../../ImageGridElement";
 import * as enzyme from "enzyme";
 
 const tileData = [
-  { img: "http://aaa.com", title: "aaa", cols: 1 },
-  { img: "http://bbb.com", title: "bbb", cols: 2 }
+  { urls: { small: "http://aaa.com" }, id: "aaa" },
+  { urls: { small: "http://bbb.com" }, id: "bbb" },
 ];
 
 describe("ImageGridList", () => {
@@ -13,13 +14,9 @@ describe("ImageGridList", () => {
     expect(imageGridList.find("ul").exists()).toBe(true);
   });
 
-  test("renders img src properly", () => {
+  test.only("renders img src properly", () => {
     const imageGridList = enzyme.mount(<ImageGridList tileData={tileData} />);
-    expect(
-      imageGridList
-        .find("img")
-        .at(1)
-        .prop("src")
-    ).toBe("http://bbb.com");
+    // console.log(imageGridList.find(".ImageGrid").debug());
+    expect(imageGridList.find(ImageGridElement).length).toBe(2);
   });
 });
