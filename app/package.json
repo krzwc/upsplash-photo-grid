@@ -26,7 +26,7 @@
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
-    "cypress:run:spec": "yarn cypress:run -- --headless --spec \"cypress/integration/sample_spec.js\"",
+    "cypress:run:spec": "npm run cypress:run -- --headless --spec \"cypress/integration/sample_spec.js\"",
     "cypress:start": "start-server-and-test start http://localhost:3000 cypress:run:spec"
   },
   "eslintConfig": {
