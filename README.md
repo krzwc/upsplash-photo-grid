@@ -20,3 +20,6 @@ and copy the administrator password
 go to `localhost:8080` and use the password
 
 Create a new user e.g. `jenkins-user`
+Go to `http://localhost:8080/pluginManager/`
+Install:
+![node](./assets/node.png)
