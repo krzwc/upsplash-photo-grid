@@ -1,6 +1,10 @@
 pipeline {
-    agent any
-    tools {nodejs "node-14"}
+    agent {
+        docker {
+            image 'cypress/base:14.16.0' 
+            args '-p 3000:3000' 
+        }
+    }
 
     stages {
         stage('Build') {
@@ -14,14 +18,14 @@ pipeline {
                     sh 'cd app && npm test a -- --watchAll=false'
             }
         }
-        stage('E2E test') {
-            steps {
-                    sh 'docker run -v $PWD:/e2e -w /e2e cypress/included:6.8.0'
-            }
-        }
         stage('Lint') {
             steps {
                     sh 'cd app && npm run lint'
+            }
+        }
+        stage('E2E test') {
+            steps {
+                    sh 'cd app && npm run cypress:start'
             }
         }
     }

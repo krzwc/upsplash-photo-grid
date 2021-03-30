@@ -6,7 +6,22 @@
 ## Setting up Jenkins
 
 ```bash
-docker run -p 8080:8080 -p 50000:50000 -d -v jenkins_home:/var/jenkins_home jenkins/jenkins:lts
+docker volume create jenkins-data
+docker volume create npm-cache
+docker volume create cypress-cache
+```
+
+```bash
+docker run \
+   -u root \
+   -d \
+   --name jenkins \
+   -p 8080:8080 \
+   -v jenkins-data:/var/jenkins_home \
+   -v npm-cache:/root/.npm \
+   -v cypress-cache:/root/.cache \
+   -v /var/run/docker.sock:/var/run/docker.sock \
+   jenkinsci/blueocean:latest
 ```
 
 and
@@ -23,3 +38,6 @@ Create a new user e.g. `jenkins-user`
 Go to `http://localhost:8080/pluginManager/`
 Install:
 ![node](./assets/node.png)
+
+Resources:
+https://github.com/cypress-io/cypress-example-kitchensink/blob/master/Jenkinsfile
