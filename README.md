@@ -37,7 +37,11 @@ go to `localhost:8080` and use the password
 Create a new user e.g. `jenkins-user`
 Go to `http://localhost:8080/pluginManager/`
 Install:
-![node](./assets/node.png)
+![docker](./assets/docker.png)
+
+For deployments stage via netlify:
+Add secret text credentials:
+![netlify](./assets/netlify.png)
 
 Resources:
 https://github.com/cypress-io/cypress-example-kitchensink/blob/master/Jenkinsfile
